@@ -10,9 +10,9 @@ function loadTasks(taskList){
             ${task.img?"<div class=\"img__container\"><img src='" + task.img + "' /></div>":""}
             <div class=\"card__body\">
             <div class=\"card__task\"><h2 class=\"task__title\"> <input type="checkbox" ${task.completed?"checked":""} title="check completed">  ${task.title + ' ' + i}</h2></div>
-            <span>created on ${task.createdOn} by ${task.createdBy}</span>
-            <p>${task.description}</p>
-            <span>Due on ${task.dueDate}</span>
+            <span class=\"date__created\">created on ${task.createdOn} by ${task.createdBy}</span>
+            <p class=\"task__description\">${task.description}</p>
+            <span class=\"date__due\"> <i class=\"far fa-calendar\"></i> Due on ${task.dueDate}</span>
             </div>           
         `;
 

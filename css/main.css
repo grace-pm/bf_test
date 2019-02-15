@@ -27,6 +27,30 @@ main {
 .taskCard {
     background-color: #232738;
     margin-top: 15px;
+    border: 1px solid #3d3f56;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.taskCard .task__description {
+    line-height: 2rem;
+    margin: 2rem 0;
+    padding-left: 4rem;
+}
+.taskCard .date__created {
+    font-size: .75rem;
+    text-transform: capitalize;
+    font-style: italic;
+    opacity: .5;
+    margin-left: 4rem;
+}
+.taskCard .date__due {
+    font-size: .75rem;
+    color: #7194ab;
+    padding-left: 4rem;
+}
+.taskCard i {
+    margin-right: 1rem;
+    font-size: 1rem;
 }
 .taskCard .img__container {
     width: 100%;
@@ -35,6 +59,7 @@ main {
 }
 .taskCard .card__body {
     padding: 2rem;
+    position: relative;
 }
 .taskCard img {
     width: 100%;
@@ -42,10 +67,25 @@ main {
     object-fit: cover;
 }
 
-.taskLate::after {
-    border-left: 2px solid lightpink;
+.taskLate .card__body::after,
+.taskCompleted .card__body::after {
+    display: block;
+    content: '';
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
-
-.taskCompleted::after {
-    border-left: 2px solid lightgreen;
+.taskLate .card__body::after {
+    background-color: lightcoral;
+}
+.taskCompleted .card__body::after {
+    background-color: lightgreen;
+}
+.taskLate .date__due i{
+    color: lightcoral;
+}
+.taskCompleted .date__due i{
+    color: lightgreen;
 }
