@@ -136,3 +136,31 @@ main {
 .taskCompleted .date__due i{
     color: #76ff5f;
 }
+/*Animation*/
+.taskCard {
+    transition: transform .3s ease-in-out;
+    position: relative;
+}
+.taskCard:hover {
+    transform: scale(1.08);
+    z-index: 1; 
+}
+.taskLate {
+    animation: glow 3s ease-in-out infinite;
+}
+@keyframes glow {
+    0% {
+        background-color: #232738;
+        box-shadow: 0 0 2rem 0 #151727;
+    }
+    50% {
+        background-color: #e04141;
+        box-shadow: 0 0 2rem 0 #e04141;
+
+    }
+    100% {
+        background-color: #232738;
+        box-shadow: 0 0 2rem 0 #151727;
+    }
+
+}
